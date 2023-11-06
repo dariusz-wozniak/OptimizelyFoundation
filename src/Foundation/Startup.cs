@@ -32,6 +32,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Optimizely.Labs.MarketingAutomationIntegration.ODP;
+using Scrutor;
 using System.IO;
 using UNRVLD.ODP.VisitorGroups.Initilization;
 
@@ -246,6 +247,12 @@ namespace Foundation
             // Add GroupingHeader
             // https://github.com/advanced-cms/grouping-header/
             services.AddGroupingHeader();
+            
+            // Automatic DI registration for all classes in the current assembly that implement an interface:
+            services.Scan(x => x.FromAssembliesOf(typeof(Startup))
+                                .AddClasses(filter => filter.Where(type => !typeof(Attribute).IsAssignableFrom(type)))
+                                .UsingRegistrationStrategy(RegistrationStrategy.Skip)
+                                .AsImplementedInterfaces());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
