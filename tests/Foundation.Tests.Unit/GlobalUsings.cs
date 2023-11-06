@@ -1,0 +1,9 @@
+global using EPiServer.ContentApi.Core.Serialization;
+global using EPiServer.ContentApi.Core.Serialization.Internal;
+global using EPiServer.ServiceLocation;
+global using EPiServer.SpecializedProperties;
+global using FluentAssertions;
+global using Foundation.BlogRelatedCode;
+global using NSubstitute;
+global using System.Runtime.Serialization;
+global using Xunit;
