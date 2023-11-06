@@ -28,7 +28,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\Foundation\Foundation.csproj" />
-      <ProjectReference Include="..\src\Foundation\Foundation.csproj" />
     </ItemGroup>
 
 </Project>
