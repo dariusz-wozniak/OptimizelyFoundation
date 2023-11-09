@@ -79,12 +79,12 @@ namespace Foundation
             }
 
             services.AddMvc(o =>
-            {
-                o.Conventions.Add(new FeatureConvention());
-                o.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
-                o.ModelBinderProviders.Insert(0, new PaymentModelBinderProvider());
-            })
-            .AddRazorOptions(ro => ro.ViewLocationExpanders.Add(new FeatureViewLocationExpander()));
+                    {
+                        o.Conventions.Add(new FeatureConvention());
+                        o.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+                        o.ModelBinderProviders.Insert(0, new PaymentModelBinderProvider());
+                    })
+                    .AddRazorOptions(ro => ro.ViewLocationExpanders.Add(new FeatureViewLocationExpander()));
 
             services.AddCommerce();
             services.AddFind();
@@ -104,19 +104,19 @@ namespace Foundation
                 o.EnablePreviewFeatures = true;
                 o.IncludeEmptyContentProperties = true;
                 o.FlattenPropertyModel = false;
-                o.IncludeMasterLanguage = false; 
-                
+                o.IncludeMasterLanguage = false;
             });
 
             // Content Delivery API
             services.AddContentDeliveryApi()
-                .WithFriendlyUrl()
-                .WithSiteBasedCors();
-            services.AddContentDeliveryApi(OpenIDConnectOptionsDefaults.AuthenticationScheme, options => {
-                options.SiteDefinitionApiEnabled = true;
-            })
-               .WithFriendlyUrl()
-               .WithSiteBasedCors();
+                    .WithFriendlyUrl()
+                    .WithSiteBasedCors();
+            services.AddContentDeliveryApi(OpenIDConnectOptionsDefaults.AuthenticationScheme, options =>
+                    {
+                        options.SiteDefinitionApiEnabled = true;
+                    })
+                    .WithFriendlyUrl()
+                    .WithSiteBasedCors();
 
             // Content Delivery Search API
             services.AddContentSearchApi(o =>
@@ -156,39 +156,40 @@ namespace Foundation
                 encryptionCertificate: null,
                 createSchema: true,
                 options =>
-            {
-                //options.RequireHttps = !_webHostingEnvironment.IsDevelopment();
-                var application = new OpenIDConnectApplication()
                 {
-                    ClientId = "postman-client",
-                    ClientSecret = "postman",
-                    Scopes =
+                    //options.RequireHttps = !_webHostingEnvironment.IsDevelopment();
+                    var application = new OpenIDConnectApplication()
                     {
-                        ContentDeliveryApiOptionsDefaults.Scope,
-                        ContentManagementApiOptionsDefaults.Scope,
-                        ContentDefinitionsApiOptionsDefaults.Scope,
-                        CommerceApiOptionsDefaults.Scope,
-                        ServiceApiOptionsDefaults.Scope
-                    }
-                };
+                        ClientId = "postman-client",
+                        ClientSecret = "postman",
+                        Scopes =
+                        {
+                            ContentDeliveryApiOptionsDefaults.Scope,
+                            ContentManagementApiOptionsDefaults.Scope,
+                            ContentDefinitionsApiOptionsDefaults.Scope,
+                            CommerceApiOptionsDefaults.Scope,
+                            ServiceApiOptionsDefaults.Scope
+                        }
+                    };
 
-                // Using Postman for testing purpose.
-                // The authorization code is sent to postman after successful authentication.
-                application.RedirectUris.Add(new Uri("https://oauth.pstmn.io/v1/callback"));
-                options.Applications.Add(application);
-                options.AllowResourceOwnerPasswordFlow = true;
+                    // Using Postman for testing purpose.
+                    // The authorization code is sent to postman after successful authentication.
+                    application.RedirectUris.Add(new Uri("https://oauth.pstmn.io/v1/callback"));
+                    options.Applications.Add(application);
+                    options.AllowResourceOwnerPasswordFlow = true;
 
-                options.Applications.Add(new OpenIDConnectApplication()
-                {
-                    ClientId = "anon-client",
-                    Scopes = {
-                        CommerceApiOptionsDefaults.Scope,
-                        "anonymous_id"
-                    }
+                    options.Applications.Add(new OpenIDConnectApplication()
+                    {
+                        ClientId = "anon-client",
+                        Scopes =
+                        {
+                            CommerceApiOptionsDefaults.Scope,
+                            "anonymous_id"
+                        }
+                    });
+                    options.AllowAnonymousFlow = true;
                 });
-                options.AllowAnonymousFlow = true;
-            });
-            
+
             services.AddOpenIDConnectUI();
 
             services.ConfigureContentDeliveryApiSerializer(settings => settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore);
@@ -199,10 +200,7 @@ namespace Foundation
             {
                 if (!x.Items.Any(x => x.Name.Equals("Foundation")))
                 {
-                    x.Items.Add(new ModuleDetails
-                    {
-                        Name = "Foundation"
-                    });
+                    x.Items.Add(new ModuleDetails { Name = "Foundation" });
                 }
             });
             // Don't camelCase Json output -- leave property names unchanged
@@ -247,12 +245,12 @@ namespace Foundation
             // Add GroupingHeader
             // https://github.com/advanced-cms/grouping-header/
             services.AddGroupingHeader();
-            
+
             // Automatic DI registration for all classes in the current assembly that implement an interface:
-services.Scan(x => x.FromAssembliesOf(typeof(Startup))
-                    .AddClasses(filter => filter.Where(type => !typeof(Attribute).IsAssignableFrom(type)))
-                    .UsingRegistrationStrategy(RegistrationStrategy.Skip)
-                    .AsImplementedInterfaces());
+            services.Scan(x => x.FromAssembliesOf(typeof(Startup))
+                                .AddClasses(filter => filter.Where(type => !typeof(Attribute).IsAssignableFrom(type)))
+                                .UsingRegistrationStrategy(RegistrationStrategy.Skip)
+                                .AsImplementedInterfaces());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
