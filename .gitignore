@@ -10,6 +10,7 @@
 tmp
 node_modules
 .sass-cache
+.idea
 
 # Build results
 [Dd]ebug/
