@@ -1,0 +1,145 @@
+Index: .idea/.idea.Foundation/.idea/conventionalCommit.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Foundation/.idea/conventionalCommit.xml b/.idea/.idea.Foundation/.idea/conventionalCommit.xml
+new file mode 100644
+--- /dev/null	(date 1725265248853)
++++ b/.idea/.idea.Foundation/.idea/conventionalCommit.xml	(date 1725265248853)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="general">
++    <option name="autoInsertSpaceAfterColon" value="false" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/Foundation/wwwroot/js/51279b5d9fbd6f024c80.svg
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Foundation/wwwroot/js/51279b5d9fbd6f024c80.svg b/src/Foundation/wwwroot/js/51279b5d9fbd6f024c80.svg
+new file mode 100644
+--- /dev/null	(date 1699197434754)
++++ b/src/Foundation/wwwroot/js/51279b5d9fbd6f024c80.svg	(date 1699197434754)
+@@ -0,0 +1,1 @@
++export default __webpack_public_path__ + "../vendors/fa-regular-400.svg";
+\ No newline at end of file
+Index: .idea/.idea.Foundation/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Foundation/.idea/.gitignore b/.idea/.idea.Foundation/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1699034302611)
++++ b/.idea/.idea.Foundation/.idea/.gitignore	(date 1699034302611)
+@@ -0,0 +1,13 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Rider ignored files
++/.idea.Foundation.iml
++/modules.xml
++/projectSettingsUpdater.xml
++/contentModel.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/.idea.Foundation/.idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Foundation/.idea/encodings.xml b/.idea/.idea.Foundation/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	(date 1699034292072)
++++ b/.idea/.idea.Foundation/.idea/encodings.xml	(date 1699034292072)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise" />
++</project>
+\ No newline at end of file
+Index: src/Foundation/wwwroot/js/e28465666fa77d7c64d3.svg
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Foundation/wwwroot/js/e28465666fa77d7c64d3.svg b/src/Foundation/wwwroot/js/e28465666fa77d7c64d3.svg
+new file mode 100644
+--- /dev/null	(date 1699197434754)
++++ b/src/Foundation/wwwroot/js/e28465666fa77d7c64d3.svg	(date 1699197434754)
+@@ -0,0 +1,1 @@
++export default __webpack_public_path__ + "../vendors/fa-solid-900.svg";
+\ No newline at end of file
+Index: .idea/.idea.Foundation/.idea/indexLayout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Foundation/.idea/indexLayout.xml b/.idea/.idea.Foundation/.idea/indexLayout.xml
+new file mode 100644
+--- /dev/null	(date 1699034297490)
++++ b/.idea/.idea.Foundation/.idea/indexLayout.xml	(date 1699034297490)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="UserContentModel">
++    <attachedFolders />
++    <explicitIncludes />
++    <explicitExcludes />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.idea.Foundation/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Foundation/.idea/vcs.xml b/.idea/.idea.Foundation/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1724356158109)
++++ b/.idea/.idea.Foundation/.idea/vcs.xml	(date 1724356158109)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CommitMessageInspectionProfile">
++    <profile version="1.0">
++      <inspection_tool class="CommitFormat" enabled="true" level="WARNING" enabled_by_default="true" />
++      <inspection_tool class="CommitNamingConvention" enabled="true" level="WARNING" enabled_by_default="true" />
++    </profile>
++  </component>
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/Foundation/wwwroot/js/9241e11c9267561e97be.svg
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Foundation/wwwroot/js/9241e11c9267561e97be.svg b/src/Foundation/wwwroot/js/9241e11c9267561e97be.svg
+new file mode 100644
+--- /dev/null	(date 1699197434752)
++++ b/src/Foundation/wwwroot/js/9241e11c9267561e97be.svg	(date 1699197434752)
+@@ -0,0 +1,1 @@
++export default __webpack_public_path__ + "../vendors/fa-brands-400.svg";
+\ No newline at end of file
+Index: .idea/.idea.Foundation/.idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Foundation/.idea/.name b/.idea/.idea.Foundation/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1725264663331)
++++ b/.idea/.idea.Foundation/.idea/.name	(date 1725264663331)
+@@ -0,0 +1,1 @@
++Foundation
+\ No newline at end of file

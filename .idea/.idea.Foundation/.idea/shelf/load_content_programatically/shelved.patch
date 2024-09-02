@@ -1,0 +1,38 @@
+Index: src/Foundation/BlogRelatedCode/LoadContentProgramatically.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Foundation/BlogRelatedCode/LoadContentProgramatically.cs b/src/Foundation/BlogRelatedCode/LoadContentProgramatically.cs
+new file mode 100644
+--- /dev/null	(date 1702891852415)
++++ b/src/Foundation/BlogRelatedCode/LoadContentProgramatically.cs	(date 1702891852415)
+@@ -0,0 +1,27 @@
++using EPiServer.PlugIn;
++using EPiServer.Scheduler;
++using JetBrains.Annotations;
++
++namespace Foundation.BlogRelatedCode;
++
++[ScheduledPlugIn(DisplayName = "Load content programatically",
++    Description = "Load content programatically",
++    GUID = "E013DD53-6E37-4693-97A6-1E81DE0C4BC0",
++    Restartable = true)]
++public class LoadContentProgramatically : ScheduledJobBase
++{
++    private readonly IContentTypeRepository _contentTypeRepository;
++
++    public LoadContentProgramatically([NotNull] IContentTypeRepository contentTypeRepository)
++    {
++        _contentTypeRepository = contentTypeRepository ?? throw new ArgumentNullException(nameof(contentTypeRepository));
++        // https://stackoverflow.com/questions/56867221/fetch-all-episerver-blocks-type-usages-programmatically
++    }
++
++    public override string Execute()
++    {
++        var contentTypes = _contentTypeRepository.List();
++        
++        throw new NotImplementedException();
++    }
++}
+\ No newline at end of file
