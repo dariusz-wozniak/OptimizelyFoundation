@@ -20,10 +20,18 @@ public class CreateAssetFolderMigrationStep : IMigrationStep
 
     public bool Execute(IProgressMessenger progressMessenger)
     {
-        var startPage = ContentReference.StartPage;
-        _contentAssetHelper.GetOrCreateAssetFolder(startPage);
-        
-        _contentAssetService.GetOrCreateGlobalAssetFolder("Video files");
+        try
+        {
+            var startPage = ContentReference.StartPage;
+            _contentAssetHelper.GetOrCreateAssetFolder(startPage);
+
+            _contentAssetService.GetOrCreateGlobalAssetFolder("Video files");
+        }
+        catch (Exception ex)
+        {
+            return true;
+        }
+
         return true;
     }
 
