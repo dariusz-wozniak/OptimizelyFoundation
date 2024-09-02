@@ -1,5 +1,4 @@
-﻿using Castle.Core.Internal;
-using EPiServer.Cms.UI.AspNetIdentity;
+﻿using EPiServer.Cms.UI.AspNetIdentity;
 using Foundation.Features.MyOrganization;
 using Foundation.Infrastructure.Cms.Users;
 using Mediachase.Commerce.Customers;
@@ -14,9 +13,9 @@ namespace Foundation.Infrastructure.Commerce.Customer.Services
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public CustomerService(ServiceAccessor<ApplicationSignInManager<SiteUser>> signinManager,
-            ServiceAccessor<ApplicationUserManager<SiteUser>> userManager,
-            IHttpContextAccessor httpContextAccessor,
-            LocalizationService localizationService)
+                               ServiceAccessor<ApplicationUserManager<SiteUser>> userManager,
+                               IHttpContextAccessor httpContextAccessor,
+                               LocalizationService localizationService)
         {
             _customerContext = CustomerContext.Current;
             _httpContextAccessor = httpContextAccessor;
@@ -106,7 +105,7 @@ namespace Foundation.Infrastructure.Commerce.Customer.Services
         public virtual FoundationContact GetContactByEmail(string email)
         {
             var contact = _customerContext.GetContacts(0, 1000)
-                .FirstOrDefault(user => user.Email == email);
+                                          .FirstOrDefault(user => user.Email == email);
             return contact == null ? null : new FoundationContact(contact);
         }
 
@@ -145,8 +144,8 @@ namespace Foundation.Infrastructure.Commerce.Customer.Services
             }
 
             return _customerContext.GetCustomerContactsInOrganization(organization.OrganizationEntity)
-                .Select(_ => new FoundationContact(_))
-                .ToList();
+                                   .Select(_ => new FoundationContact(_))
+                                   .ToList();
         }
 
         public virtual void AddContactToOrganization(FoundationOrganization organization, FoundationContact contact, B2BUserRoles userRole)
@@ -159,8 +158,8 @@ namespace Foundation.Infrastructure.Commerce.Customer.Services
         public virtual List<FoundationContact> GetContacts()
         {
             return _customerContext.GetContacts(0, 1000)
-                .Select(c => new FoundationContact(c))
-                .ToList();
+                                   .Select(c => new FoundationContact(c))
+                                   .ToList();
         }
 
         public virtual async Task<SiteUser> GetSiteUserAsync(string email)
@@ -216,6 +215,10 @@ namespace Foundation.Infrastructure.Commerce.Customer.Services
         public virtual async Task SignOutAsync()
         {
             await SignInManager().SignOutAsync();
+
+#if DEBUG
+            var contextUser = SignInManager().Context.User;
+#endif
             //TrackingCookieManager.SetTrackingCookie(Guid.NewGuid().ToString());
         }
 
