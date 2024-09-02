@@ -13,23 +13,20 @@ Foundation offers a starting point that is intuitive, well-structured and modula
 
 You will need these to run locally on your machine.
 
-[Net 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) sdk is required to use with visual studio.  Runtime maybe sufficent to just run the application.
+* [Net 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) sdk is required to use with visual studio.  Runtime maybe sufficent to just run the application.
+* [Node JS](https://nodejs.org/en/download/)
 
-[Node JS](https://nodejs.org/en/download/)
+Mac/Linux: 
+  * [Docker](https://docs.docker.com/desktop/mac/install/)
 
-Mac/Linux
-
-[Docker](https://docs.docker.com/desktop/mac/install/)
-
-Windows
-
-[Sql Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+Windows:
+* [Sql Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 ---
 
 ## The Solution
 
-`Foundation has a default username and password of admin@example.com / Episerver123!`
+Foundation has a default username and password of `admin@example.com` / `Episerver123!`
 
 ---
 
