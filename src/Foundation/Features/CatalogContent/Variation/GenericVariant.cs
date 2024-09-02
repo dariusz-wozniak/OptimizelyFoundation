@@ -53,7 +53,7 @@ namespace Foundation.Features.CatalogContent.Variation
         [SelectOne(SelectionFactoryType = typeof(ElevatedRoleSelectionFactory))]
         [BackingType(typeof(PropertyString))]
         public virtual string VirtualProductRole { get; set; }
-
+        
         #region Manufacturer
 
         [Display(Name = "Mpn", GroupName = Infrastructure.TabNames.Manufacturer, Order = 5)]

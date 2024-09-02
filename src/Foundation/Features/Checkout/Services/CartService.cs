@@ -709,7 +709,7 @@ namespace Foundation.Features.Checkout.Services
             cart.Properties["ParentOrderGroupId"] = 0;
             _orderRepository.Save(cart);
         }
-
+        
         public bool PlaceCartForQuote(ICart cart)
         {
             var quoteResult = true;
