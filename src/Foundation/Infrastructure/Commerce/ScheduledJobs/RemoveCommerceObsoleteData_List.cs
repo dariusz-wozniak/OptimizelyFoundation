@@ -31,7 +31,7 @@ public class RemoveCommerceObsoleteData_List : ScheduledJobBase
 
         var sb = new StringBuilder();
         sb.AppendLine("Properties to be removed: (type.name)");
-        listPropertiesToBeRemoved.ForEach(p => sb.Append($"{p.Type.Name}.{p.Name()};"));
+        listPropertiesToBeRemoved.ForEach(p => sb.Append($"{p.Type.Name}.{p.Name()}<br>"));
         
         return sb.ToString();
     }
@@ -62,7 +62,7 @@ public class RemoveCommerceObsoleteData_Delete : ScheduledJobBase
 
         var sb = new StringBuilder();
         sb.AppendLine("Properties to be removed: (type.name)");
-        listPropertiesToBeRemoved.ForEach(p => sb.Append($"{p.Type.Name}.{p.Name()};"));
+        listPropertiesToBeRemoved.ForEach(p => sb.Append($"{p.Type.Name}.{p.Name()};<br>"));
         
         return sb.ToString();
     }
