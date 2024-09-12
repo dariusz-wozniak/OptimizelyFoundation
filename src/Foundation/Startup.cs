@@ -32,6 +32,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Optimizely.Labs.MarketingAutomationIntegration.ODP;
+using OptimizelyDeleteMissingCommerceProperties;
 using Scrutor;
 using System.IO;
 using UNRVLD.ODP.VisitorGroups.Initilization;
@@ -251,6 +252,8 @@ namespace Foundation
                                 .AddClasses(filter => filter.Where(type => !typeof(Attribute).IsAssignableFrom(type)))
                                 .UsingRegistrationStrategy(RegistrationStrategy.Skip)
                                 .AsImplementedInterfaces());
+
+            services.AddDeleteMissingCommerceProperties();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
