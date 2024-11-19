@@ -9,7 +9,7 @@ public class XhtmlStringPropertyServiceTests
     {
         IXhtmlStringPropertyService sut = Sut();
 
-        var converterContext = (ConverterContext)FormatterServices.GetUninitializedObject(typeof(ConverterContext));
+        var converterContext = (ConverterContext)System.Runtime.CompilerServices.RuntimeHelpers.GetUninitializedObject(typeof(ConverterContext));
         
         var something = sut.DoSomething(converterContext);
 
