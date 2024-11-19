@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.CompilerServices;
 
 namespace Foundation.Tests.Unit.BlogRelatedCode;
 
@@ -9,7 +10,7 @@ public class XhtmlStringPropertyServiceTests
     {
         IXhtmlStringPropertyService sut = Sut();
 
-        var converterContext = (ConverterContext)FormatterServices.GetUninitializedObject(typeof(ConverterContext));
+        var converterContext = (ConverterContext)RuntimeHelpers.GetUninitializedObject(typeof(ConverterContext));
         
         var something = sut.DoSomething(converterContext);
 
@@ -28,7 +29,7 @@ public class XhtmlStringPropertyServiceTests
         substituteForServiceLocator.GetService(typeof(IXhtmlStringPropertyRenderer))
                                    .Returns(substituteForRenderer);
         
-        ServiceLocator.SetServiceProvider(substituteForServiceLocator);
+        ServiceLocator.SetScopedServiceProvider(substituteForServiceLocator);
         
         // Indirect assertion:
         ServiceLocator.Current.GetRequiredService<IXhtmlStringPropertyRenderer>()
